@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="486.0" prefWidth="512.0" spacing="10" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.duoc.pataverde.controller.MainController">
+
+    <padding>
+        <Insets bottom="15" left="15" right="15" top="15" />
+    </padding>
+
+    <!-- 1. Título -->
+    <Label text="Clínica Veterinaria PataVerde - Registro de pacientes">
+        <font>
+            <Font size="18" />
+        </font>
+    </Label>
+
+    <!-- 2. Formulario: columnas 0-1 datos comunes, columnas 2-3 datos específicos -->
+    <GridPane hgap="10" prefHeight="149.0" prefWidth="447.0" vgap="8">
+        <Label text="Tipo:" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <ComboBox fx:id="cmbTipo" onAction="#onCambiarTipo" promptText="Seleccione" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Edad:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="txtEdad" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Peso (kg):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="txtPeso" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label style="-fx-font-weight: bold;" text="Datos del perro" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <Label text="Raza:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <TextField fx:id="txtRaza" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+        <CheckBox fx:id="chkVacunado" text="Vacunado" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+        <CheckBox fx:id="chkAdopcion" text="Disponible para adopción" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+        <Label style="-fx-font-weight: bold;" text="Datos del gato" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <CheckBox fx:id="chkExterior" text="Vive en exterior" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <!-- 3. Botones -->
+    <HBox spacing="10">
+        <Button fx:id="btnRegistrar" onAction="#onRegistrar" text="Registrar" />
+        <Button fx:id="btnEliminar" onAction="#onEliminar" prefHeight="25.0" prefWidth="61.0" text="Eliminar" />
+    </HBox>
+
+    <!-- 4. Tabla de mascotas -->
+    <TableView fx:id="tblMascotas" prefHeight="236.0" prefWidth="792.0">
+        <columns>
+            <TableColumn fx:id="colTipo" prefWidth="100" text="Tipo" />
+            <TableColumn fx:id="colNombre" prefWidth="180" text="Nombre" />
+            <TableColumn fx:id="colEdad" prefWidth="80" text="Edad" />
+            <TableColumn fx:id="colPeso" prefWidth="100" text="Peso (kg)" />
+            <TableColumn fx:id="colCosto" prefWidth="150" text="Costo consulta" />
+        </columns>
+    </TableView>
+
+    <!-- 5. Área de mensajes -->
+    <Label fx:id="lblMensaje" text="" wrapText="true" />
+
+</VBox>

@@ -1,0 +1,18 @@
+[
+  {
+    "raza": "Labrador",
+    "vacunado": true,
+    "disponibleAdopcion": true,
+    "nombre": "Max",
+    "edad": 3,
+    "peso": 15.5
+  },
+  {
+    "raza": "Beagle",
+    "vacunado": false,
+    "disponibleAdopcion": false,
+    "nombre": "Rex",
+    "edad": 5,
+    "peso": 8.0
+  }
+]
